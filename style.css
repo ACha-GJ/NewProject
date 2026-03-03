@@ -219,6 +219,24 @@ img {
   color: #334155;
 }
 
+.upload-list li + li {
+  margin-top: 10px;
+}
+
+.upload-name,
+.upload-meta {
+  display: block;
+}
+
+.upload-name {
+  font-weight: 600;
+}
+
+.upload-meta {
+  margin-top: 2px;
+  color: #64748b;
+}
+
 .analysis-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -386,6 +404,16 @@ img {
   text-align: left;
 }
 
+.thumb span,
+.thumb small {
+  display: block;
+}
+
+.thumb small {
+  margin-top: 2px;
+  color: #64748b;
+}
+
 .thumb.active {
   border-color: #0f766e;
   box-shadow: inset 0 0 0 1px #0f766e;
@@ -419,6 +447,10 @@ img {
 .feedback-panel h3 {
   margin: 0;
   font-size: 1.1rem;
+}
+
+.empty-card {
+  padding: 24px;
 }
 
 @media (max-width: 900px) {
