@@ -240,6 +240,33 @@ Outputs:
 - Verification summary
 - Optional next step
 
+## Preview Deployment Workflow
+
+Use this workflow when the project is connected to Cloudflare Pages through GitHub.
+
+Branch roles:
+- `main` is the production branch.
+- `preview/*` is the default branch pattern for in-progress demos.
+- `demo/*` may be used for temporary showcase builds when needed.
+
+Working rules:
+- Do not push unfinished work directly to `main` when the goal is intermediate review.
+- Push in-progress work to a `preview/*` branch first so Cloudflare Pages can create a Preview Deployment.
+- Use `main` only after the preview build has been reviewed and approved.
+- Keep preview branch names descriptive, such as `preview/sprint-2` or `preview/ux-pass`.
+
+Expected flow:
+1. Create or switch to a `preview/*` branch.
+2. Make and verify changes locally.
+3. Commit and push the preview branch to GitHub.
+4. Review the Cloudflare Pages Preview Deployment for that branch.
+5. After approval, merge or replay the approved changes onto `main`.
+
+Operational notes:
+- This workflow assumes Cloudflare Pages is configured with `main` as the production branch.
+- Preview Deployments should be enabled for non-production branches in Cloudflare Pages branch controls.
+- Use preview branches for visual review, UX review, and in-progress stakeholder checks.
+
 ## Role Sections
 
 The sections below are intentionally isolated. Each one is a future split candidate and should be edited as an independent policy block.
